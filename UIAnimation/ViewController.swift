@@ -12,14 +12,40 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateView()
+       
+ 
+                                                                
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func updateView(){
+        let initImage = "lambda"
+        guard let lambdaImage = UIImage(named: initImage) else {return}
+        imageView.image = lambdaImage
+        
+        L.text = "L"
+        A.text = "A"
+        M.text = "M"
+        B.text = "B"
+        D.text = "D"
+        lastLetter.text = "A"
+        
+        
+        
     }
-
-
+    
+    var shouldScramble = false
+    
+    @IBOutlet weak var L: UILabel!
+    @IBOutlet weak var A: UILabel!
+    @IBOutlet weak var M: UILabel!
+    @IBOutlet weak var B: UILabel!
+    @IBOutlet weak var D: UILabel!
+    @IBOutlet weak var lastLetter: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBAction func toggle(_ sender: Any) {
+        shouldScramble = !shouldScramble
+       
+    }
 }
 
